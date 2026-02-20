@@ -13,8 +13,6 @@ As of January 2026, Anthropic merged the concept of **Custom Commands** and **Sk
 ```
 skills/
 ├── README.md                    # This file
-├── agentation/                  # Symlink to shared skill
-├── find-skills/                 # Symlink to shared skill
 ├── frontend-design/             # Frontend UI creation
 ├── visual-design-craft/         # Premium UI polish enforcement
 ├── changelog/                   # Update CLAUDE_CHANGELOG.md
@@ -89,11 +87,6 @@ Example:
 
 - **/frontend-design** - Create distinctive, production-grade UI interfaces
 - **/visual-design-craft** - Enforce premium visual polish (Linear/Vercel quality)
-
-### Utilities
-
-- **/find-skills** - Discover and install new skills
-- **/agentation** - Add visual feedback toolbar to Next.js projects
 
 ## Using Skills
 
