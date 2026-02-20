@@ -1,0 +1,9 @@
+# macOS
+.DS_Store
+
+# Project-specific skills with private info
+mondo/
+
+# Symlinks to local machine paths
+agentation
+find-skills
