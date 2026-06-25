@@ -15,12 +15,18 @@ type: project
 ## 1. Problem statement
 The user pain / business need. Why now. (Pulled from the confirmed problem + discovery.)
 
-## 2. Goals & success metrics
-Each metric has THREE parts — see references/metrics.md:
-| Metric | How we measure it | Target |
-|--------|-------------------|--------|
-| e.g. organic sessions to the page | GA4 | +20% in 3 months |
-| e.g. signup conversion | Mixpanel funnel | 2% → 3.5% |
+## 2. Definition of success & metrics
+State what "this worked" means, then make it measurable. Feeds `success.md` (references/metrics.md, references/success-template.md).
+
+**Definition of success:** 1–2 sentences in plain words.
+
+**Metrics / key results** — each with metric, tool, the event(s) behind it, target:
+| Metric (KR) | Telemetry / tool | Event(s) to track | Target |
+|-------------|------------------|-------------------|--------|
+| organic sessions to the page | GA4 | page_view (guide pages) | +20% in 3 months |
+| signup conversion | Mixpanel funnel | signup_started → signup_completed | 2% → 3.5% |
+
+A target without an event behind it can't be measured — name the events here.
 
 ## 3. Non-goals / out of scope
 Explicit. Bounds what the agent may touch. (Critical — agents over-reach without this.)

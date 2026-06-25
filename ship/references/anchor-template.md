@@ -30,15 +30,12 @@ Current step in the pipeline — this is what Intake reads to resume.
 - [ ] 13. Compound consolidated
 
 ## Documents
-- [[discovery]] · [[brainstorm]] · [[prd]] · [[plan]]
+- [[discovery]] · [[brainstorm]] · [[prd]] · [[plan]] · [[success]]
 - Build: [[build/phase-1-...]] …
 
 ## Learnings (consolidated at ship)
 - Promoted to rules/skills: <what became automatic>
 
-## Metrics follow-up
-| When | Metric | Target | Actual | Verdict |
-|------|--------|--------|--------|---------|
-| +4 weeks (YYYY-MM-DD) | … | … | | |
-| +3 months (YYYY-MM-DD) | … | … | | |
+## Success / metrics follow-up
+Defined and tracked in [[success]]. Next verification: <YYYY-MM-DD>.
 ```

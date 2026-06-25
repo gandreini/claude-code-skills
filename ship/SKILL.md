@@ -16,14 +16,14 @@ description: "Use when the user invokes /ship or hands over a brief to build, im
 ENTRY  Intake ........ parse brief, ask for missing info, set up project
 A 1.   Discovery ..... discovery.md   (4 streams)
   2.   Brainstorm .... brainstorm.md  (critical loop)
-  3.   PRD ........... prd.md         (critical loop; EARS + metrics+targets)
+  3.   PRD ........... prd.md         (critical loop; EARS + definition of success)
   4.   Plan .......... plan.md        (phases; tests-first; +tracking +metrics-check)
   ★ GATE 1 — user approves PRD + plan
 B (per phase → build/phase-N.md)
   5.   Implement (TDD)   6. Unit tests   7. Adversarial review
   8.   Design-system    9. E2E/browser  10. Demo   11. Compound (incremental)
   ★ GATE 2 — user reviews everything (all demos + full diff)
-C 12.  Ship + CI autofix       13. Compound consolidation
+C 12.  Ship + CI autofix    13. Compound + finalize success.md
 ```
 Create a TodoWrite item per step of the current stage; tick as gates pass.
 
@@ -37,7 +37,7 @@ Create a TodoWrite item per step of the current stage; tick as gates pass.
 ## Stage A — Definition
 1. **Discovery → `discovery.md`** — full discovery across **4 streams**: market, competitor benchmarking, user research (Reddit etc.), existing data (the project's own sources in `resources.md`). Use `deep-research`, web search, the `ce-web-researcher` / `ce-best-practices-researcher` / `ce-issue-intelligence-analyst` agents, and the declared MCPs. **Flag useful MCPs that aren't installed.** See `references/discovery-checklist.md`.
 2. **Brainstorm → `brainstorm.md`** — `ce-brainstorm` (optionally `ce-ideate`), fed `discovery.md`. A **loop**: draft → self-critique → revise, repeated.
-3. **PRD → `prd.md`** — draft with `ce-brainstorm`, then iterate with `ce-doc-review` until clean. Structure per `references/prd-template.md`: non-goals, **EARS** acceptance criteria, ✅/⚠️/🚫 boundaries, and metrics as **what + how + target** (`references/metrics.md`).
+3. **PRD → `prd.md`** — draft with `ce-brainstorm`, then iterate with `ce-doc-review` until clean. Structure per `references/prd-template.md`: non-goals, **EARS** acceptance criteria, ✅/⚠️/🚫 boundaries, and a full **definition of success** — metrics (what + how + target), the **events & telemetry** behind them, and **key results** to hit. These flow into `success.md` (`references/metrics.md`, `references/success-template.md`).
 4. **Plan → `plan.md`** — `ce-plan`: stable-ID, checkable, **tests-first**, anti-scope-creep, split into **phases**. Must add a **metrics-tracking step** and a **metrics-check step**.
 
 **★ GATE 1** — present `prd.md` + `plan.md`, wait for explicit approval, revise if asked.
@@ -55,15 +55,15 @@ For each phase, create `build/phase-N-<slug>.md` (`references/phase-doc-template
 | 10. Demo capture | `ce-demo-reel` | one recording per phase, linked in phase doc |
 | 11. Compound (incremental) | capture into phase doc | learnings written while context is fresh |
 
-Record gate outcomes, demo link, and learnings in the phase doc; update the anchor Status after each phase.
+Record gate outcomes, demo link, and learnings in the phase doc; update the anchor Status after each phase. **Metrics:** the tracking implemented here must make **every event/metric in `success.md` live in the tool** — verify by firing a real event and seeing it land, not just that "some" tracking exists.
 
 **★ GATE 2** — after ALL phases, surface every demo + the full diff, wait for review.
 
 ## Stage C — Ship
 12. **Ship** — `ce-commit-push-pr`, then CI-watch + autofix (the `lfg` pattern): fix real issues, ≤3 iterations, record unresolved findings.
-13. **Compound consolidation** — merge per-phase learnings into the anchor; **promote recurring fixes into rules/skills** (CLAUDE.md, new skills). Then register the **metrics follow-up** (anchor item; offer to schedule via the `schedule` skill).
+13. **Compound consolidation + `success.md`** — merge per-phase learnings into the anchor; **promote recurring fixes into rules/skills** (CLAUDE.md, new skills). Then **finalize `success.md`** (`references/success-template.md`) with concrete verify-by dates, and register the verification (anchor item; offer to schedule via the `schedule` skill). After release, the scheduled check fills its verification log: each key result hit or missed.
 
 We do NOT invoke `lfg` directly — it starts at `ce-plan`, with no discovery/brainstorm/PRD and no human gates. We take its build→ship pattern and wrap it.
 
 ## References
-`bridging.md` (CE output → Obsidian) · `resources-template.md` · `discovery-checklist.md` · `prd-template.md` · `metrics.md` · `phase-doc-template.md` · `anchor-template.md`
+`bridging.md` (CE output → Obsidian) · `resources-template.md` · `discovery-checklist.md` · `prd-template.md` · `metrics.md` · `success-template.md` · `phase-doc-template.md` · `anchor-template.md`
